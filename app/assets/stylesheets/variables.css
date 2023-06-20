@@ -5,4 +5,10 @@
   --text-color: #cfd8dd;
   --border-radius: 50%;
   --font-family: "Roboto", sans-serif;
+  --breakpoint-large: 1600px;
+  --breakpoint-medium: 768px;
+  --breakpoint-small: 576px;
+  --spacing-small: 10px;
+  --spacing-medium: 30px;
+  --spacing-large: 60px;
 }

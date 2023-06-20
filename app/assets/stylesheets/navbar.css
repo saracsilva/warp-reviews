@@ -1,0 +1,16 @@
+.navbar {
+  display: flex;
+  margin-top: var(--spacing-medium);
+  justify-content: space-between;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+.navbar-links a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 300;
+  margin-left: var(--spacing-large);
+}
