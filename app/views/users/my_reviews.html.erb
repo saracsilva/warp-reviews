@@ -1,2 +1,11 @@
-<h1>Users#my_reviews</h1>
-<p>Find me in app/views/users/my_reviews.html.erb</p>
+<h1>Hello <%= current_user.email %></h1>
+<p>Here are all your reviews:</p>
+<h1>My Reviews</h1>
+<% if @reviews.any? %>
+  <% @reviews.each do |review| %>
+    <%= render(MyReviewComponent.new(review,find_series_title(review[:series_id]))) %>
+    
+  <% end %>
+<% else %>
+  <p>No reviews found.</p>
+<% end %>

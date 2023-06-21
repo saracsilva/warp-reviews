@@ -1,0 +1,16 @@
+.reviews_title {
+  padding-top: var(--spacing-large);
+}
+
+.review_container {
+  background-color: var(--background-color);
+  border-top: 1px solid var(--secondary-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.review_user {
+  grid-column: 1 / 2;
+}
+.review_text {
+  font-weight: 300;
+}

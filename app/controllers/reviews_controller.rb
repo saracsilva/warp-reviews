@@ -12,16 +12,20 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review created successfully."
       
       series_name = series_name_for_id(params[:review][:series_id])
-redirect_path_string = "/series/#{series_name}"
+      redirect_path_string = "/series/#{series_name}"
       redirect_to redirect_path_string, allow_other_host: true
     else
       flash[:alert] = "Failed to create review."
       redirect_to series_path(params[:review][:series_id])
     end
   end
-
+  def user_reviews
+    @reviews = Review.where(user_id: current_user.id)
+    puts @reviews.inspect
+    render :user_my_reviews
+  end
   private
-
+  
   def review_params
     params.require(:review).permit(:content, :series_id)
   end

@@ -1,0 +1,23 @@
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h4>Write a Review</h4>
+<%= form_with(model: Review.new, url: reviews_path, data: { turbo: false } , local:true) do |form| %>
+  <%= form.hidden_field :series_id, value: @series[:id] %>
+  <%= form.text_area :content, placeholder: "Enter your review" %>
+  <%= form.submit "Create Review" %>
+<% end %>
+  </div>
+</div>
+<script type="text/javascript">
+  const openModalButton = document.getElementById("openModalButton");
+  const closeModalButton = document.querySelector("#myModal .close");
+
+  openModalButton.addEventListener("click", function() {
+    document.querySelector("#myModal").style.display = "block";
+  });
+
+  closeModalButton.addEventListener("click", function() {
+    document.querySelector("#myModal").style.display = "none";
+  });
+</script>

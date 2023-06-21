@@ -1,8 +1,11 @@
 <h1><%= @series[:title] %></h1>
 <p><%= @series[:about] %></p>
+<button type="button" id="openModalButton">Add your Review</button>
 <%= render 'shared/messages' %>
-<%= form_with(model: Review.new, url: reviews_path, data: { turbo: false } , local:true) do |form| %>
-  <%= form.hidden_field :series_id, value: @series[:id] %>
-  <%= form.text_area :content, placeholder: "Enter your review" %>
-  <%= form.submit "Create Review" %>
-<% end %>
+<%= render 'form' %>
+
+<h2 class="reviews_title">Reviews:</h2>
+
+<% @reviews.each do |review| %>
+    <%= render(ReviewComponent.new(review, @user_emails.first), class: 'card-component') %>
+  <% end %>
