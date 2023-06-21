@@ -1,15 +1,14 @@
 # frozen_string_literal: true
 
 class CardComponent < ViewComponent::Base
-  def initialize(series:)
+  def initialize(name, series)
+    @name = name
     @series = series
   end
 
-  def call
-    render
-  end
+  
 
   private
 
-  attr_reader :series
+  attr_reader :series, :name
 end

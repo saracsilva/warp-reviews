@@ -14,3 +14,17 @@
   font-weight: 300;
   margin-left: var(--spacing-large);
 }
+@media (max-width: --breakpoint-medium) {
+  .navbar {
+    margin: 500px;
+    padding: 500px;
+    background-color: aqua;
+  }
+}
+@media (max-width: --breakpoint-small) {
+  .navbar {
+    margin: 500px;
+    padding-top: 500px;
+    background-color: aqua;
+  }
+}

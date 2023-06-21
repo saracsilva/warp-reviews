@@ -1,10 +1,5 @@
 <div class="series-cards">
   <% @series.each do |name, series| %>
-    <div class="series-card">
-      <%= link_to series_path(series_name: name) do %>
-        <%= image_tag(series[:image_url], alt: name) %>
-        <h3><%= name %></h3>
-      <% end %>
-    </div>
+    <%= render(CardComponent.new(name, series), class: 'card-component') %>
   <% end %>
 </div>
