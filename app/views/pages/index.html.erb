@@ -10,8 +10,11 @@
   <p class="home_paragraph">If you are a Trekkie, here you’ll be able to
 review all series and also check what other think about too.</p>
 <div class="buttons">
+
 <%= link_to "Browse Reviews", series_path, class: "btn btn-primary" %>
-<%= link_to "Become a Reviewer", user_session_path, class: "btn btn-secondary" %>
+<% if !user_signed_in? %>
+  <%= link_to "Become a Reviewer", user_session_path, class: "btn btn-secondary" %>
+<% end %>
 </div>
   
 
