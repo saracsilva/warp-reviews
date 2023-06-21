@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get 'user/my_reviews', to: 'users#my_reviews'
   
   get 'about', to: 'pages#about'
-  namespace :user do
-    get 'my_reviews', to: 'users#my_reviews'
-  end
+  
+  resources :reviews, only: [:create]
 end

@@ -1,5 +1,8 @@
-
-
 <h1><%= @series[:title] %></h1>
 <p><%= @series[:about] %></p>
-
+<%= render 'shared/messages' %>
+<%= form_with(model: Review.new, url: reviews_path, data: { turbo: false } , local:true) do |form| %>
+  <%= form.hidden_field :series_id, value: @series[:id] %>
+  <%= form.text_area :content, placeholder: "Enter your review" %>
+  <%= form.submit "Create Review" %>
+<% end %>
