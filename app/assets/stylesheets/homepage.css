@@ -1,0 +1,66 @@
+.home_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 100px;
+  justify-content: center;
+  align-items: center;
+}
+.home_image {
+  grid-column: 1 / 2;
+  align-self: center;
+  place-self: center;
+}
+.home_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.home_title {
+  font-weight: 100;
+  font-size: 3rem;
+  line-height: 1.2rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.home_paragraph {
+  max-width: 500px;
+}
+.about_paragraph {
+  max-width: 80%;
+  line-height: 1.2rem;
+  letter-spacing: 2px;
+}
+.star_trek_text {
+  font-family: "Krona One", sans-serif;
+}
+.buttons {
+  display: flex;
+  gap: var(--spacing-small);
+}
+.btn {
+  width: 200px;
+  height: 50px;
+  border: 1px solid var(--primary-color);
+  border-radius: 25px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  text-decoration: none;
+  margin-bottom: 25px;
+  transition: all 0.2s ease-in-out 0ms;
+}
+.btn-primary {
+  background-color: var(--primary-color);
+}
+.btn:hover {
+  transform: scale(0.95);
+}
+.padding_about {
+  padding-top: var(--spacing-large);
+}
