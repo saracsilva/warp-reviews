@@ -5,10 +5,10 @@
     <div class="wrapper">
 
     <div class="image__tag">
-        <%= image_tag(series[:image_url], alt: name, class: "banner-image" ) %>
+        <%= image_tag(series[:image_url], alt: series[:title], class: "banner-image" ) %>
     </div>
     <div class="card_content">
-        <h3 class="series_title"><%= name %></h3>
+        <h3 class="series_title"><%= series[:title] %></h3>
         
         <p class="series_about"><%= truncate( series[:about], length: 100)%></p>
     </div>

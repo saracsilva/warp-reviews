@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'series', to: 'series#index'
   get 'series/:name', to:'series#show'
-  get 'my_reviews', to: 'users#my_reviews'
+  get 'user/my_reviews', to: 'users#my_reviews'
   
   get 'about', to: 'pages#about'
   namespace :user do
