@@ -74,7 +74,8 @@ group :test do
   gem "webdrivers"
 end
 group :production do
-  gem "pg", "~> 1.1"
+  gem "pg" 
+  gem 'rails_12factor' 
 end
 
 gem "view_component", "~> 3.2"
