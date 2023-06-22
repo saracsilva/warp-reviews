@@ -9,7 +9,8 @@ class SeriesController < ApplicationController
    
     @series = find_series(STAR_TREK_SERIES, params[:name])
     @reviews = Review.where(series_id: @series[:id])
-    @user_emails = User.where(id: @reviews.pluck(:user_id)).pluck(:email)
+    user_ids = @reviews.pluck(:user_id)
+    @user_emails = User.where(id: user_ids).pluck(:email)
    
   end
   private

@@ -1,11 +1,12 @@
 <h1><%= @series[:title] %></h1>
 <p><%= @series[:about] %></p>
-<button type="button" id="openModalButton">Add your Review</button>
+<button id="openModalButton" onclick="initializeModal()" class="btn btn-primary">Add your Review</button>
+
 <%= render 'shared/messages' %>
 <%= render 'form' %>
 
 <h2 class="reviews_title">Reviews:</h2>
 
 <% @reviews.each do |review| %>
-    <%= render(ReviewComponent.new(review, @user_emails.first), class: 'card-component') %>
-  <% end %>
+    <%= render(ReviewComponent.new(review, review.user_id), class: 'card-component') %>
+<% end %>

@@ -16,12 +16,11 @@ class ReviewsController < ApplicationController
       redirect_to redirect_path_string, allow_other_host: true
     else
       flash[:alert] = "Failed to create review."
-      redirect_to series_path(params[:review][:series_id])
+      redirect_to series_path, allow_other_host: true
     end
   end
   def user_reviews
     @reviews = Review.where(user_id: current_user.id)
-    puts @reviews.inspect
     render :user_my_reviews
   end
   private

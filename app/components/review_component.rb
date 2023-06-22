@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 class ReviewComponent < ViewComponent::Base
-  def initialize(review, email)
+  def initialize(review, user_id)
     @review= review
-    @email = email
+    @user_email = User.find_by(id: user_id)&.email
   end
-
+  def user_email
+    @user_email
+  end
 end

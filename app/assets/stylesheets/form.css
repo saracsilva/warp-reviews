@@ -45,8 +45,20 @@
   margin: var(--spacing-small);
   cursor: text;
 }
+.form_area {
+  border: 1px solid transparent;
+  border-radius: 15px;
+  width: 80%;
+  height: 100px;
+  background: var(--text-color);
+  padding: 9px;
+  margin: var(--spacing-small);
+  cursor: text;
+}
 .modal {
   display: none;
+  position: fixed;
+  align-items: center;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -58,11 +70,15 @@
 }
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
+  background-color: var(--background-color);
+  margin: 5% auto;
+  padding: 10px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
+  height: 30%;
+  display: block;
+  flex-direction: column;
+  padding: var(--spacing-large);
 }
 
 .close {
